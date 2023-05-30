@@ -57,3 +57,20 @@
     }
   }
 }
+
+
+.navbar-custom{
+  background-color: $primary-color;
+
+  .navbar-brand{
+    font-size: 16px;
+    color: $white;
+    font-weight: 600;
+
+    
+  }
+  .login{
+    font-size: 16px;
+    color: $white;
+  }
+}

@@ -18,87 +18,90 @@
 				</a>
 				<div class="devider"></div>
 				<a
-        class="download-apps"
+					class="download-apps"
 					href="https://play.google.com/store/apps/details?id=id.co.superindo.mysuperindo&hl=en_US&pli=1"
 					for="">
-					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download My
-					Superindo</a
+					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download
+					My Superindo</a
 				>
 			</div>
 
 			<div class="form-inline about-us">
-        <a href="https://www.superindo.co.id/membership/" target="_blank" class=""> 
-          <fa :icon="['fas', 'user-check']" class="mr-1" />
-          Membership
-        </a>
-        <div class="devider"></div>
-        <div class="history">
-          <a href="">
-            <fa :icon="['fas', 'building']" class="mr-1" />
-            Sejarah
-          </a>
-        </div>
-      </div>
+				<a
+					href="https://www.superindo.co.id/membership/"
+					target="_blank"
+					class="">
+					<fa :icon="['fas', 'user-check']" class="mr-1" />
+					Membership
+				</a>
+				<div class="devider"></div>
+				<div class="history">
+					<a href="">
+						<fa :icon="['fas', 'building']" class="mr-1" />
+						Sejarah
+					</a>
+				</div>
+			</div>
 		</div>
 		<nav class="navbar-custom navbar navbar-expand-lg navbar-light">
-			<a class="navbar-brand" href="#">
-				<img
-					src="/docs/4.6/assets/brand/bootstrap-solid.svg"
-					width="30"
-					height="30"
-					alt="" />
-			</a>
-			<button
-				class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<img
+						src="@/assets/logo/logo-superindo.webp"
+						width="40"
+						height="40"
+						alt="" />
+					Superindo
+				</a>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							role="button"
-							data-toggle="dropdown"
-							aria-expanded="false">
-							Dropdown
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled">Disabled</a>
-					</li>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Search"
-						aria-label="Search" />
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-						>Search</button
-					>
-				</form>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 w-75">
+            <li class="nav-item">
+              <button
+						class="btn-category mr-2"
+						type="button"
+						aria-label="Toggle navigation">
+						<fa :icon="['fas', 'list']" class="mr-1" />
+					</button>
+            </li>
+						<li class="nav-item mr-2 w-100">
+							<input
+								class="form-control w-100"
+								type="search"
+								placeholder="Search"
+								aria-label="Search" />
+						</li>
+						<li class="nav-item">
+							<button
+								class="btn-category"
+								type="button"
+								aria-label="Toggle navigation">
+								<fa :icon="['fas', 'cart-shopping']" class="mr-1" />
+							</button>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<button
+								class="btn-primary-superindo login"
+								type="button"
+								aria-label="Toggle navigation">
+								Daftar | Login
+							</button>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	</div>

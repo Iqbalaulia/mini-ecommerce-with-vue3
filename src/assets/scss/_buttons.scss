@@ -63,6 +63,30 @@
   }
 }
 
+
+.btn-category{
+  border: 1px solid $white;
+  padding: 0 !important;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 6px 8px 6px 8px !important;
+  svg{
+    filter: $white-filter;
+  }
+}
+
+.btn-primary-superindo{
+  border: 1px solid $white;
+  padding: 0 !important;
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 6px 8px 6px 8px !important;
+  svg{
+    filter: $white-filter;
+  }
+}
+
+
 // Future-proof disabling of clicks on `<a>` elements
 a.btn.disabled,
 fieldset:disabled a.btn {
