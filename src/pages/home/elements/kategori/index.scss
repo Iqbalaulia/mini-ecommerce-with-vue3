@@ -1,0 +1,41 @@
+.category{
+  margin-top: 40px;
+  background-color: $secondary;
+  padding: 24px;
+  border-radius: 8px;
+  text-decoration: none;
+
+  h2{
+    font-size: 24px;
+    color: $black;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .content{
+    &__category{
+      text-decoration: none;
+      background-color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 4px;
+      padding: 16px;
+      
+      label{
+        color: $black;
+        font-weight: 500;
+      }
+
+      &:hover{
+        border: 1px solid $primary-color;
+      }
+
+      .images-content{
+        object-fit: fill;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
