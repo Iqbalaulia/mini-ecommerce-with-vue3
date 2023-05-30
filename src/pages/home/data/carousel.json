@@ -1,0 +1,23 @@
+{
+  "data":{
+    "items":[
+      {
+        "name": "diskon gajian",
+        "images_path": "https://www.superindo.co.id/images/rollingbanners/all_bank_mei.jpg"
+      },
+      {
+        "name": "happy call",
+        "images_path": "https://www.superindo.co.id/images/rollingbanners/PWP_happycall_web_banner.jpg"
+      },
+      {
+        "name": "update aplikasi",
+        "images_path": "https://www.superindo.co.id/images/rollingbanners/Banner_(1349x434)MSI26.jpg"
+      },
+      {
+        "name": "update aplikasi",
+        "images_path": "https://www.superindo.co.id/images/rollingbanners/banner-SSRK23.jpg"
+      }
+
+    ]
+  }
+}

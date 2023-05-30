@@ -23,6 +23,7 @@ import "bootstrap/dist/js/bootstrap.js";
 import "jquery";
 import "popper.js";
 import "./assets/scss/style.scss";
+import 'vue3-carousel/dist/carousel.css'
 
 createApp(App)
 	.component("fa", FontAwesomeIcon)
