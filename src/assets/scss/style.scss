@@ -43,5 +43,11 @@
 @import "spinners";
 @import "utilities";
 @import "print";
+
+// components
+@import "@/components/Layout/Navbar/scss/Navbar.scss";
+@import "@/components/Layout/Footer/scss/Footer.scss";
+
+// pages
 @import "@/pages/cart/scss/index.scss";
 @import "@/pages/home/scss/index.scss";

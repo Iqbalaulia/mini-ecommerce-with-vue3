@@ -1,0 +1,59 @@
+/** @format */
+
+.navbar-social-media {
+	background-color: $primary-color;
+	.devider {
+    border-left: 1px solid $white;
+    height: 18px;
+  }
+	.navbar-brand {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+
+		.download-apps {
+			filter: $white-filter;
+			font-size: 12px;
+      
+      &:hover{
+        text-decoration: none;
+      }
+		}
+
+		&__instagram {
+			filter: $white-filter;
+			font-size: 16px;
+		}
+
+		&__youtube {
+			filter: $white-filter;
+			font-size: 16px;
+		}
+
+		&__twitter {
+			filter: $white-filter;
+			font-size: 16px;
+		}
+
+		&__facebook {
+			filter: $white-filter;
+			font-size: 16px;
+		}
+	}
+
+  .about-us{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    a{
+      font-size: 14px;
+      color: $white;
+
+      &:hover{
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}

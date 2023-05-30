@@ -10,6 +10,7 @@ $gray-800: #343a40 !default;
 $gray-900: #152c5b !default;
 $black: #000 !default;
 
+$primary-color:#D7130A !important;
 $blue: #007bff !default;
 $indigo: #3252df !default;
 $purple: #6f42c1 !default;
@@ -20,3 +21,7 @@ $yellow: #ffcc47 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+
+// filter svg colors
+
+$white-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(326deg) brightness(104%) contrast(101%);
