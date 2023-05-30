@@ -1,8 +1,7 @@
 <template>
   <div>
-    Ujicoba
+    Navbar
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

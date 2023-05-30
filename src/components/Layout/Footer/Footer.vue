@@ -1,8 +1,7 @@
 <template>
   <div>
-    Ujicoba
+    Footer
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
