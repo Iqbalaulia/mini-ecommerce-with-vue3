@@ -1,0 +1,50 @@
+.another-promo{
+  margin-top: 40px;
+  h2{
+    font-size: 24px;
+    color: $black;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .carousel__prev{
+    background: $white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .carousel__next{
+    background: $white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .images-carousel{
+    height: auto;
+    border-radius: 6px;
+   }
+ 
+  .carousel__pagination{
+    margin: 0;
+    .carousel__pagination-button{
+      &:after{
+        border-radius: 12px;
+        width: 20px;
+        background-color: $gray-600;
+        height: 6px;
+       }
+    }
+    .carousel__pagination-button--active{
+     &:after{
+      border-radius: 12px;
+      width: 40px;
+      background-color: $primary-color;
+      height: 6px;
+     }
+    }
+  }
+
+}
+
+
