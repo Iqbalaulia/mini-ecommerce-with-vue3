@@ -1,6 +1,6 @@
 <template>
   <div class="information-banner">
-    <VCarousel :items-to-show="2.5" :wrap-around="true">
+    <VCarousel :autoplay="2000"  :items-to-show="2.5" :wrap-around="true">
       <Slide
         v-for="(itemsCarousel, index) in dataCarousel.data.items"
         :key="index">

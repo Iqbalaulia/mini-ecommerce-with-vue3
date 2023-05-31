@@ -3,13 +3,16 @@
 <template>
 	<div class="">
 		<div class="">
-			<SectionBanner/>
+			<SectionBanner />
 		</div>
 		<div class="container">
 			<SectionKategori />
 		</div>
 		<div class="container">
 			<SectionPromoLain />
+		</div>
+		<div class="container">
+			<SectionProduk />
 		</div>
 	</div>
 </template>
@@ -18,4 +21,5 @@
 import SectionBanner from "@/pages/home/elements/banner/Banner.vue";
 import SectionKategori from "@/pages/home/elements/kategori/Kategori.vue";
 import SectionPromoLain from "@/pages/home/elements/promoLainnya/PromoLain.vue";
+import SectionProduk from "@/pages/home/elements/produk/Produk.vue";
 </script>
