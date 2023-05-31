@@ -9,7 +9,7 @@
 					class="col-md-3 col-custom-3"
 					v-for="(productList, indexProduct) in stateHomepage.dataProduct"
 					:key="indexProduct">
-					<router-link :to="`#`" class="cart-product">
+					<router-link :to="`/product-detail/${productList.uuid}?name=${productList.name}`" class="cart-product">
 						<div class="images">
 							<img
 								class="img-fluid"

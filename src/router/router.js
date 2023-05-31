@@ -6,6 +6,8 @@ import Layout from "@/components/Layout/index.vue";
 // routes pages
 import { homeRoutes } from "../pages/home/routes/index";
 import { cartRoutes } from "../pages/cart/routes/index";
+import { productDetailRoutes } from "../pages/productDetail/routes/index";
+
 const routes = [
 	{
 		path: "/",
@@ -14,6 +16,7 @@ const routes = [
 		children: [
       ...homeRoutes,
       ...cartRoutes,
+			...productDetailRoutes,
     ],
 	},
 ];

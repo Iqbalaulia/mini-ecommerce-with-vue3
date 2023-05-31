@@ -11,6 +11,7 @@ const state = {
 		loading: false,
 		is_random: false,
 		sort: "",
+		errorData:{}
 	},
 };
 
@@ -52,10 +53,9 @@ const actions = {
 						path: [key],
 					});
 				}
-				commit("changeBank", {
-					loadingType: false,
-					errordataBank: errors,
-					errorInfoType: true,
+				commit("changeHomepage", {
+					loading: false,
+					errorData: errors,
 				});
 			}
 		if (!result.error)
@@ -96,10 +96,9 @@ const actions = {
 						path: [key],
 					});
 				}
-				commit("changeBank", {
-					loadingType: false,
-					errordataBank: errors,
-					errorInfoType: true,
+				commit("changeHomepage", {
+					loading: false,
+					errorData: errors,
 				});
 			}
 		if (!result.error)

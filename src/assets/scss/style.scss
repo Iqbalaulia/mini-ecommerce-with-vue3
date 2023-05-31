@@ -49,9 +49,6 @@
 @import "@/components/Layout/Navbar/scss/Navbar.scss";
 @import "@/components/Layout/Footer/scss/Footer.scss";
 
-// pages
-@import "@/pages/cart/scss/index.scss";
-@import "@/pages/home/scss/index.scss";
 
 // elements
 @import '@/pages/home/elements/kategori/index.scss';
@@ -59,3 +56,4 @@
 @import '@/pages/home/elements/banner/index.scss';
 @import '@/pages/home/elements/produk/index.scss';
 @import '@/pages/home/elements/produkTerlaris/index.scss';
+@import '@/pages/productDetail/elements/productDetail/index.scss';

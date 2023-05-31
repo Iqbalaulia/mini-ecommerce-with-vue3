@@ -6,7 +6,7 @@
 		<div class="data-product">
 			<div class="row">
 				<div class="col-md-3 col-custom-3" v-for="(productList, indexProduct) in stateHomepage.dataSellingProduct" :key="indexProduct">
-					<router-link :to="`#`" class="cart-product">
+					<router-link :to="`/product-detail/${productList.uuid}?name=${productList.name}`" class="cart-product">
 						<div class="images">
               <img class="img-fluid" :src="productList.mediafile" v-once :alt="productList.name">
             </div>
@@ -45,6 +45,7 @@ export default defineComponent({
 			perPage:5,
 			page:1,
 		});
+
 	},
 
 	setup() {

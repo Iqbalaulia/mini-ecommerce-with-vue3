@@ -94,7 +94,7 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
 							<button
-								class="btn-primary-superindo login"
+								class="btn-transparent-superindo login"
 								type="button"
 								aria-label="Toggle navigation">
 								Daftar | Login

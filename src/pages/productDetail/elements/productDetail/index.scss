@@ -1,0 +1,174 @@
+.product-detail{
+  margin-top: 20px;
+  .images{
+    img{
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 260px;
+      object-fit: contain;
+    }
+  }
+
+  .title{
+    h1{
+      font-size: 20px;
+      line-height: 35px;
+      color: $black;
+      font-weight: 500;
+    }
+  }
+
+  .price{
+    label{
+      font-size: 24px;
+      font-weight: 600;
+      color: $primary-color;
+    }
+  }
+
+  .description{
+    margin-top: 30px;
+    label{
+      font-size: 16px;
+      color: $black;
+      font-weight: bold;
+    }
+    p{
+      font-size: 16px;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+
+  .merchant{
+    .information{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+
+      .merchant-name{
+        label{
+          margin: 0;
+          font-size: 16px;
+          color: $black;
+
+          .icon-check{
+            filter: $cyan-filter;
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+      
+
+        .status-merchant{
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .circle-green{
+            width: 10px;
+            height: 10px;
+            background-color: $green;
+            border-radius: 50%;
+          }
+          .circle-red{
+            width: 10px;
+            height: 10px;
+            background-color: $primary-color;
+            border-radius: 50%;
+          }
+
+          label{
+            font-size: 14px;
+            color: $green;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .transaction{
+    width: 100%;
+    border: 1px solid $gray-200;
+    border-radius: 6px;
+    padding: 8px;
+    
+    label{
+      font-size: 16px;
+      font-weight: 700;
+      color: $black;
+    }
+
+    .input-selling{
+      display: inline-flex;
+      border: 1px solid $gray-400 ;
+      padding: 4px;
+      border-radius: 8px;
+      .sell{
+        width: 80px;
+        border-top: 0;
+        border-left: 0;
+        border-right:0;
+        border-bottom:0;
+        text-align: center;
+        &:focus{
+          outline: none;
+        }
+      }
+
+      .disabled{
+        background-color: $gray-200;
+        pointer-events: none;
+      }
+
+      .btn-sell{
+        height: 30px;
+        min-height: 0;
+
+        &:hover{
+          background-color: $gray-200;
+        }
+      }
+    }
+
+    .stock{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      .data-stock{
+        font-size: 14px;
+      }
+      span{
+        font-size: 14px;
+      }
+    }
+
+    .subtotal{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0px 10px 0px;
+      .total{
+        font-size: 14px;
+        font-weight: 100;
+      }
+
+      .rupiah{
+        font-size: 18px;
+        font-weight: bold;
+        color: $black;
+      }
+    }
+  }
+}
