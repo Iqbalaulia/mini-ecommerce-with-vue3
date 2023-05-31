@@ -16,9 +16,8 @@
                 <fa :icon="['fas', 'city']" class="mr-1" />
                 {{ productList.merchant }}
               </div>
-              <div class="price">{{ productList.price }} </div>
+              <div class="price">{{formatCurrency(productList.price) }} </div>
 						</div>
-          
 					</router-link>
 				</div>
 			</div>
@@ -29,6 +28,7 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import { defineComponent } from "vue";
+import useHelper from '@/settings/helper'
 
 export default defineComponent({
 	computed: {
@@ -44,7 +44,10 @@ export default defineComponent({
 	},
 
 	setup() {
-		return {};
+    const { formatCurrency } = useHelper()
+		return {
+      formatCurrency,
+    };
 	},
 });
 </script>
