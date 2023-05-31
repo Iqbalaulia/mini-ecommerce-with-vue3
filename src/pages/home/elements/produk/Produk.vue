@@ -5,18 +5,29 @@
 		<h2>Produk</h2>
 		<div class="data-product">
 			<div class="row">
-				<div class="col-md-3 col-custom-3" v-for="(productList, indexProduct) in stateHomepage.dataProduct" :key="indexProduct">
+				<div
+					class="col-md-3 col-custom-3"
+					v-for="(productList, indexProduct) in stateHomepage.dataProduct"
+					:key="indexProduct">
 					<router-link :to="`#`" class="cart-product">
 						<div class="images">
-              <img class="img-fluid" :src="productList.mediafile" v-once :alt="productList.name">
-            </div>
+							<img
+								class="img-fluid"
+								:src="productList.mediafile"
+								v-once
+								:alt="productList.name" />
+						</div>
 						<div class="product">
-							<label for="">{{productList.name.length > 37 ? productList.name.slice(0,37) + '...' : productList.name}}</label>
-              <div class="merchant">
-                <fa :icon="['fas', 'city']" class="mr-1" />
-                {{ productList.merchant }}
-              </div>
-              <div class="price">{{formatCurrency(productList.price) }} </div>
+							<label for="">{{
+								productList.name.length > 37
+									? productList.name.slice(0, 37) + "..."
+									: productList.name
+							}}</label>
+							<div class="merchant">
+								<fa :icon="['fas', 'city']" class="mr-1" />
+								{{ productList.merchant }}
+							</div>
+							<div class="price">{{ formatCurrency(productList.price) }} </div>
 						</div>
 					</router-link>
 				</div>
@@ -28,7 +39,7 @@
 <script>
 import { mapState, mapActions } from "vuex";
 import { defineComponent } from "vue";
-import useHelper from '@/settings/helper'
+import useHelper from "@/settings/helper";
 
 export default defineComponent({
 	computed: {
@@ -40,14 +51,17 @@ export default defineComponent({
 		...mapActions("stateHomepage", ["getDataProduct"]),
 	},
 	async mounted() {
-		await this.getDataProduct();
+		await this.getDataProduct({
+			is_random: false,
+			perPage: 50,
+		});
 	},
 
 	setup() {
-    const { formatCurrency } = useHelper()
+		const { formatCurrency } = useHelper();
 		return {
-      formatCurrency,
-    };
+			formatCurrency,
+		};
 	},
 });
 </script>
