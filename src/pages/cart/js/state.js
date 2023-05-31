@@ -77,7 +77,17 @@ const actions = {
 
 		await ApiPostRequest(`/api/cart`, formData);
 	},
-};
+
+	async deleteFromCart({ commit }, payload) {
+		commit("changeCart", {
+			loading: true,
+		});
+
+		
+    let formData = new FormData();
+		formData.append("_method", "delete");
+		await ApiPostRequest(`/api/cart/${payload.uuid}`, formData);
+	},};
 
 export default {
 	namespaced: true,
