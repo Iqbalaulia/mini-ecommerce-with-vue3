@@ -21,7 +21,7 @@
 					class="download-apps"
 					href="https://play.google.com/store/apps/details?id=id.co.superindo.mysuperindo&hl=en_US&pli=1"
 					for="">
-					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download
+					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download 
 					My Superindo</a
 				>
 			</div>
@@ -65,16 +65,15 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 w-75">
-            <li class="nav-item">
-              <button
-						class="btn-category mr-2"
-						type="button"
-						aria-label="Toggle navigation">
-						<fa :icon="['fas', 'list']" class="mr-1" />
-					</button>
-            </li>
+						<li class="nav-item">
+							<button
+								class="btn-category mr-2"
+								type="button"
+								aria-label="Toggle navigation">
+								<fa :icon="['fas', 'list']" class="mr-1" />
+							</button>
+						</li>
 						<li class="nav-item mr-2 w-100">
 							<input
 								class="form-control w-100"
@@ -83,12 +82,16 @@
 								aria-label="Search" />
 						</li>
 						<li class="nav-item">
-							<button
+							
+							<router-link :to="`/carts`"
 								class="btn-category"
 								type="button"
 								aria-label="Toggle navigation">
 								<fa :icon="['fas', 'cart-shopping']" class="mr-1" />
-							</button>
+								<span class="cart-list">
+									{{ stateCart.listCart.length }}
+								</span>
+							</router-link>
 						</li>
 					</ul>
 					<ul class="navbar-nav ml-auto">
@@ -107,5 +110,27 @@
 	</div>
 </template>
 
-<script setup>
+<script>
+import { mapState, mapActions } from "vuex";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+	computed: {
+		...mapState({
+			stateCart: (state) => state.stateCart.data,
+		}),
+	},
+
+	async mounted(){
+		await this.getListCart()
+	},
+
+	setup() {
+		const { getListCart } = mapActions("stateCart", ["getListCart"]);
+		
+		return {
+			getListCart,
+		};
+	},
+});
 </script>
