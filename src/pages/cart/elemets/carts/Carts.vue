@@ -18,7 +18,7 @@
 					v-for="(cart, indexCart) in stateCart.listCart"
 					:key="indexCart">
 					<div class="merchant">
-						<input type="checkbox" id="vehicle1" name="vehicle1" value="" @change="funcCheckItem(cart)" />
+						<input type="checkbox" id="vehicle1" name="vehicle1" :value="cart.uuid" @change="funcCheckItem(cart)" />
 						<div class="images">
 							<img
 								src="@/assets/logo/logo-superindo.webp"
@@ -34,6 +34,7 @@
 								type="checkbox"
 								id="vehicle1"
 								name="vehicle1"
+								:value="cart.uuid"
 								@change="funcCheckItem(cart)" />
 							<div class="information_product">
 								<img class="img-fluid" :src="cart.product.mediafile" alt="" />
@@ -118,6 +119,9 @@ export default defineComponent({
         product_uuid: product_uuid
       })
       await this.getListCart();
+			this.updateCartItem()
+			
+			
     },
 
     async minusItem(qty, product_uuid){
@@ -126,8 +130,21 @@ export default defineComponent({
         qty: qty -= 1,
         product_uuid: product_uuid
       })
+			
       await this.getListCart();
-    }
+			this.updateCartItem()
+
+    },
+
+		updateCartItem(){
+			this.stateCart.listCart.forEach(element => {
+				this.dataChecklistItem.forEach(elementCheck => {
+					if(element.uuid === elementCheck.uuid){
+						elementCheck.qty = element.qty
+					}
+				})
+			});
+		}
 	},
 
 	setup() {
@@ -142,7 +159,12 @@ export default defineComponent({
     const calculateTotalItems = ref(0);
 
     const funcCheckItem = (item) => {
-      dataChecklistItem.value.push(item);
+			const index = dataChecklistItem.value.findIndex(check => check.uuid === item.uuid);
+
+			if(dataChecklistItem.value.length > 0)
+			if(index !== -1) dataChecklistItem.value.splice(index,1)
+			if(index === -1) dataChecklistItem.value.push(item);
+
     };
 
     const funcTransactionPrice = (items) =>{
