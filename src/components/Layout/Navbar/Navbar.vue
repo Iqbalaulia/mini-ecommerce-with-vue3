@@ -78,7 +78,7 @@
 							<input
 								class="form-control w-100"
 								type="search"
-								placeholder="Search"
+								placeholder="Pencarian produk"
 								aria-label="Search" />
 						</li>
 						<li class="nav-item">

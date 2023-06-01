@@ -77,6 +77,25 @@ const actions = {
 
 		await ApiPostRequest(`/api/cart`, formData);
 	},
+	
+	async updateToCart({ commit, state }, payload) {
+		commit("changeCart", {
+			loading: true,
+		});
+
+		const { data } = state;
+
+		if (payload && payload.product_uuid)
+			data.formData.product_uuid = payload.product_uuid;
+		if (payload && payload.qty) data.formData.qty = payload.qty;
+
+    let formData = new FormData();
+		formData.append("_method", "put");
+    formData.append('qty', data.formData.qty);
+
+		await ApiPostRequest(`/api/cart/${data.formData.product_uuid}`, formData);
+	},
+
 
 	async deleteFromCart({ commit }, payload) {
 		commit("changeCart", {
@@ -87,7 +106,9 @@ const actions = {
     let formData = new FormData();
 		formData.append("_method", "delete");
 		await ApiPostRequest(`/api/cart/${payload.uuid}`, formData);
-	},};
+	},
+
+};
 
 export default {
 	namespaced: true,

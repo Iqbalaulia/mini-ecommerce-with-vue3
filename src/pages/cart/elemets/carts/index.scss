@@ -32,7 +32,7 @@
     margin-bottom: 20px;
     border: 1px solid $gray-200;
     padding: 15px;
-    box-shadow: 0 0 12px rgba(0,0,0,.07);
+    box-shadow: 0 1px 4px rgba(141,150,170,0.4);
 
     .merchant{
       display: flex;
@@ -91,6 +91,90 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .qty-process{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .input-qty{
+            .sell{
+              width: 40px;
+              border-top: 0;
+              border-left: 0;
+              border-right:0;
+              border-bottom:1px solid $gray-200;
+              text-align: center;
+              &:focus{
+                outline: none;
+              }
+            }
+
+            .disabled{
+              background-color: $gray-200;
+              pointer-events: none;
+            }
+      
+            .btn-sell{
+              height: 30px;
+              min-height: 0;
+      
+              &:hover{
+                background-color: $gray-200;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__shopping-conclusion{
+    box-shadow: 0 1px 4px rgba(141,150,170,0.4);
+    width: 100%;
+    border: 1px solid $gray-200;
+    margin-top: 10px;
+    padding: 15px;
+
+    label{
+      font-size: 14px;
+      font-weight: bold;
+      color: $black;
+    }
+
+    .sub-total{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .total-goods{
+        font-size: 14px;
+        font-weight: 400;
+        color: $black;
+      }
+
+      .total-prices{
+        font-size: 14px;
+        font-weight: 400;
+        color: $black;
+      }
+    }
+
+    .total-all{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title-price{
+        font-size: 16px;
+        font-weight: 600;
+        color: $black;
+      }
+
+      .number-price{
+        font-size: 16px;
+        font-weight: 600;
+        color: $black;
       }
     }
   }
