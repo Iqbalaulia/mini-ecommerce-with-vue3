@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-	<div>
+	<div class="nav-sticky">
 		<div class="navbar-social-media navbar navbar-light">
 			<div class="navbar-brand">
 				<a href="" class="navbar-brand__instagram">
@@ -21,7 +21,7 @@
 					class="download-apps"
 					href="https://play.google.com/store/apps/details?id=id.co.superindo.mysuperindo&hl=en_US&pli=1"
 					for="">
-					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download 
+					<fa :icon="['fas', 'mobile-screen-button']" class="mr-1" /> Download
 					My Superindo</a
 				>
 			</div>
@@ -45,14 +45,14 @@
 		</div>
 		<nav class="navbar-custom navbar navbar-expand-lg navbar-light">
 			<div class="container">
-				<a class="navbar-brand" href="#">
+				<router-link :to="`/`" class="navbar-brand">
 					<img
 						src="@/assets/logo/logo-superindo.webp"
 						width="40"
 						height="40"
 						alt="" />
 					Superindo
-				</a>
+				</router-link>
 
 				<button
 					class="navbar-toggler"
@@ -68,6 +68,7 @@
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 w-75">
 						<li class="nav-item">
 							<button
+								@click="funcOpenFilter"
 								class="btn-category mr-2"
 								type="button"
 								aria-label="Toggle navigation">
@@ -76,14 +77,16 @@
 						</li>
 						<li class="nav-item mr-2 w-100">
 							<input
+								@input="searchProduct"
 								class="form-control w-100"
 								type="search"
+								v-model="searchData"
 								placeholder="Pencarian produk"
 								aria-label="Search" />
 						</li>
 						<li class="nav-item">
-							
-							<router-link :to="`/carts`"
+							<router-link
+								:to="`/carts`"
 								class="btn-category"
 								type="button"
 								aria-label="Toggle navigation">
@@ -107,12 +110,23 @@
 				</div>
 			</div>
 		</nav>
+
+		<div :class="!openFilter ? `d-none` : ``" class="bg-white nav-filter-data">
+			<label for="">Pencarian harga</label>
+			<input
+				@input="validateInput"
+				class="form-control w-100 border"
+				type="search"
+				v-model="searchPrice"
+				placeholder="harga"
+				aria-label="Search" />
+		</div>
 	</div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
 	computed: {
@@ -121,15 +135,63 @@ export default defineComponent({
 		}),
 	},
 
-	async mounted(){
-		await this.getListCart()
+	async mounted() {
+		await this.getListCart();
+	},
+
+	methods: {
+		searchProduct() {
+			this.getDataProduct({
+				page: 1,
+				sort: "name",
+				q: this.searchData,
+			});
+			this.getDataSellingProduct({
+				page: 1,
+				sort: "name",
+				q: this.searchData,
+				is_random: true,
+			});
+		},
+		validateInput(){
+			const regex = /^[0-9]+$/;
+			regex.test(this.searchPrice);
+			this.getDataProduct({
+				page: 1,
+				sort: "-price",
+				q: this.searchPrice,
+			});
+			this.getDataSellingProduct({
+				page: 1,
+				sort: "-price",
+				q: this.searchPrice,
+				is_random: true,
+			});
+		}
 	},
 
 	setup() {
 		const { getListCart } = mapActions("stateCart", ["getListCart"]);
-		
+		const { getDataSellingProduct, getDataProduct } = mapActions(
+			"stateHomepage",
+			["getDataSellingProduct", "getDataProduct"]
+		);
+		const openFilter = ref(false);
+		const searchData = ref("");
+		const searchPrice = ref(0);
+
+		const funcOpenFilter = () => {
+			openFilter.value = !openFilter.value;
+		};
+
 		return {
 			getListCart,
+			getDataProduct,
+			getDataSellingProduct,
+			funcOpenFilter,
+			openFilter,
+			searchData,
+			searchPrice,
 		};
 	},
 });

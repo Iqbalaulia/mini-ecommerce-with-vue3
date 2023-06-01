@@ -1,5 +1,12 @@
 /** @format */
 
+.nav-sticky{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .navbar-social-media {
 	background-color: $primary-color;
 	.devider {
@@ -90,5 +97,21 @@
     top: 3px;
     margin-left: 15px;
     text-align: center
+  }
+}
+
+.nav-filter-data{
+  width: 300px;
+  margin-top: 10px;
+  position: absolute;
+  left: 150px;
+  border-radius: 4px;
+  padding: 16px;
+  border: 2px solid $gray-200;
+
+  label{
+    font-size: 14px;
+    color: $black;
+    font-weight: 400;
   }
 }

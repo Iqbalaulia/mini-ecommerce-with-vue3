@@ -143,7 +143,6 @@ export default defineComponent({
 
     const funcCheckItem = (item) => {
       dataChecklistItem.value.push(item);
-      console.log('item---', dataChecklistItem.value)
     };
 
     const funcTransactionPrice = (items) =>{
