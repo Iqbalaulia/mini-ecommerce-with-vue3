@@ -1,0 +1,15 @@
+.scroll-top-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: $primary-color;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: opacity 0.3s;
+  color: $white;
+}
+
+.scroll-top-button.show {
+	opacity: 1;
+}

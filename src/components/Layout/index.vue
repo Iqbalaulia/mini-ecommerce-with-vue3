@@ -2,6 +2,7 @@
   <div>
     <Navbar/>
     <router-view />
+    <VScrolltop/>
     <Footer/>
   </div>
 </template>
@@ -10,5 +11,6 @@
 import Navbar from './Navbar/Navbar.vue'
 import Footer from './Footer/Footer.vue'
 import { RouterView } from 'vue-router'
+import VScrolltop from '../v-scrolltop/index.vue'
 
 </script>

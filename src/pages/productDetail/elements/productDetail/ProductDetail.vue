@@ -127,14 +127,14 @@ export default defineComponent({
 		}),
 	},
 	methods: {
-    async postDataCart(qty, product_uuid){
-      await this.postToCart({
-        qty: qty,
-        product_uuid: product_uuid
-      })
-      await this.getListCart()
-    }
-   
+		async postDataCart(qty, product_uuid) {
+			await this.postToCart({
+				qty: qty,
+				product_uuid: product_uuid,
+			});
+			await this.getListCart();
+			
+		},
 	},
 	async mounted() {
 		await this.getDataDetailProduct({ uuid: this.product_uuid });
@@ -143,12 +143,16 @@ export default defineComponent({
 	setup() {
 		const route = useRoute();
 		const { formatCurrency } = useHelper();
-    const { postToCart, getListCart } = mapActions("stateCart", ["postToCart",'getListCart']);
-    const { getDataDetailProduct } = mapActions("stateProductDetail", ['getDataDetailProduct']);
-		
+		const { postToCart, getListCart } = mapActions("stateCart", [
+			"postToCart",
+			"getListCart",
+		]);
+		const { getDataDetailProduct } = mapActions("stateProductDetail", [
+			"getDataDetailProduct",
+		]);
+
 		const product_uuid = route.params.id;
 		const qtyProduct = ref(1);
-
 
 		const funcPlus = () => {
 			qtyProduct.value += 1;
@@ -157,11 +161,10 @@ export default defineComponent({
 			qtyProduct.value -= 1;
 		};
 
-	
 		return {
-      postToCart,
-      getListCart,
-      getDataDetailProduct,
+			postToCart,
+			getListCart,
+			getDataDetailProduct,
 			funcPlus,
 			funcMinus,
 			formatCurrency,

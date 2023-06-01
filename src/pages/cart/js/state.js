@@ -1,6 +1,7 @@
 /** @format */
 
 import { ApiGetRequest, ApiPostRequest } from "@/settings/api";
+import { ElMessage } from 'element-plus'
 
 const state = {
 	data: {
@@ -75,7 +76,18 @@ const actions = {
     formData.append('product_uuid', data.formData.product_uuid);
     formData.append('qty', data.formData.qty);
 
-		await ApiPostRequest(`/api/cart`, formData);
+		const result = await ApiPostRequest(`/api/cart`, formData);
+		if(result.data){
+			ElMessage({
+				message: "Produk berhasil ditambahkan kedalam keranjang",
+				type: "success",
+			});
+		}else{
+			ElMessage({
+				message: "Cek jaringan anda!",
+				type: "error",
+			});
+		}
 	},
 	
 	async updateToCart({ commit, state }, payload) {
@@ -93,7 +105,18 @@ const actions = {
 		formData.append("_method", "put");
     formData.append('qty', data.formData.qty);
 
-		await ApiPostRequest(`/api/cart/${data.formData.product_uuid}`, formData);
+		const result = await ApiPostRequest(`/api/cart/${data.formData.product_uuid}`, formData);
+		if(result.data){
+			ElMessage({
+				message: "Data produk berhasil diubah",
+				type: "success",
+			});
+		}else{
+			ElMessage({
+				message: "Cek jaringan anda!",
+				type: "error",
+			});
+		}
 	},
 
 
@@ -106,6 +129,11 @@ const actions = {
     let formData = new FormData();
 		formData.append("_method", "delete");
 		await ApiPostRequest(`/api/cart/${payload.uuid}`, formData);
+		
+		ElMessage({
+			message: "Data produk berhasil dihapus",
+			type: "success",
+		});
 	},
 
 };
